@@ -9,11 +9,11 @@ Console.WriteLine("Please type any number to be considered number3 >>");
 string input3 = Console.ReadLine();
 int number3 = Convert.ToInt32(input3);
 int maximum = number1;
-if(number2>maximum)
+if (number2 > maximum)
 {
     maximum = number2;
 }
-if(number3>maximum)
+if (number3 > maximum)
 {
     maximum = number3;
 }

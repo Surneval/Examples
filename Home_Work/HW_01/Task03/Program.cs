@@ -2,7 +2,7 @@
 Console.WriteLine("Please type any number >> ");
 string input = Console.ReadLine();
 int number = Convert.ToInt32(input);
-if(number % 2 == 0)
+if (number % 2 == 0)
 {
     Console.WriteLine("Your numer is even");
 }

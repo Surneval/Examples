@@ -10,7 +10,7 @@ if (n < 0)
         if (n % 2 == 0)
         {
             Console.Write($"{n}, ");
-            
+
         }
         n++;
     }

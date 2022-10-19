@@ -29,6 +29,7 @@ else
 }
 
 int third = 0;
+
 if (count < 3)
 {
     Console.WriteLine("the third digit is absent ");
@@ -41,7 +42,9 @@ else
     }
     else
     {
-        third = third + (k / ((count - 3) * 10)) % 10;
+        double i = Math.Pow(10, (count-3));
+        int l = Convert.ToInt32(i);
+        third = third + (k /l ) % 10;
     }
 
     Console.WriteLine($"the third digit of the number is {third}");

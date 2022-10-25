@@ -23,7 +23,7 @@ int[] GetArr(int count, int userAnswer)
     {
         numbers[i] = (userAnswer / Convert.ToInt32((Math.Pow(10, count - i - 1)))) % 10;
     }
-    //numbers[numbers.Length-1] = userAnswer % 10;
+    
     return numbers;
 }
 void PrintArr(int[] numbers)

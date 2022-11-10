@@ -3,21 +3,12 @@
 // Реализовать через функции. (* Доп сложность, “введите количество элементов массива”,
 // “Введите минимальный порог случайных значений”,
 // “Введите максимальный порог случайных значений”)
-int Size (string msg)
+int UserInput (string msg)
 {
     Console.WriteLine(msg);
     return int.Parse(Console.ReadLine());
 }
-int MinVal (string msg)
-{
-    Console.WriteLine(msg);
-    return int.Parse(Console.ReadLine());
-}
-int MaxVal(string msg)
-{
-    Console.WriteLine(msg);
-    return int.Parse(Console.ReadLine());
-}
+
 int[] CreateArray(int length, int minVal, int maxVal)
 {
     int[] tempArray = new int[length];
@@ -27,9 +18,9 @@ int[] CreateArray(int length, int minVal, int maxVal)
     }
     return tempArray;
 }
-int length = Size("Please input the size of an array ");
-int minVal = MinVal("Please input min value ");
-int maxVal = MaxVal("Please input max value ");
+int length = UserInput("Please input the size of an array ");
+int minVal = UserInput("Please input min value ");
+int maxVal = UserInput("Please input max value ");
 int[] array = CreateArray(length, minVal, maxVal);
 
 void PrintArray(int[] array)

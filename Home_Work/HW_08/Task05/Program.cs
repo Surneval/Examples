@@ -18,29 +18,47 @@ int Fact(int n)
     return fact;
 }
 
-
-void CreatePascal(int numb)
+void PrintArray(int[,] array)
 {
-    for (int i = 0; i < numb; i++)
+    string[,] stringAr = new string[array.GetLength(0), array.GetLength(1)];
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j <= (numb - i); j++) // создаём отступы слева 
-        {
-            Console.Write(" ");
-        }
         for (int j = 0; j <= i; j++)
         {
-            Console.Write(" "); // создаём пробелы между элементами треугольника для симметрии
-            Console.Write(Fact(i) / (Fact(j) * Fact(i - j))); //формула вычисления элементов - С из n по k
+            stringAr[i, j] = array[i, j].ToString();
+            Console.Write($"{stringAr[i, j]}\t");
         }
         Console.WriteLine();
-        Console.WriteLine(); // после каждой строки с числами отступаем две пустые строчки
+        Console.WriteLine();
+        Console.WriteLine();
+        for(int j = i+1; j < array.GetLength(1); j++)
+        {
+            stringAr[i,j] = " ";
+        }
     }
+    Console.WriteLine();
+}
+
+int[,] CreatePascal(int numb)
+{
+    int[,] pascal = new int[numb, numb];
+    for (int i = 0; i < numb; i++)
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            pascal[i, j] = Fact(i) / (Fact(j) * Fact(i - j));// C из i по j = i! / (j! * (i-j)!)
+
+        }
+
+    }
+    return pascal;
 }
 
 void Runner()
 {
     int numb = Prompt("Enter number of raws");
-    CreatePascal(numb);
+    int[,] pascal = CreatePascal(numb);
+    PrintArray(pascal);
 
 }
 Runner();

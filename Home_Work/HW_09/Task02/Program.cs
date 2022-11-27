@@ -12,10 +12,10 @@ int Prompt(string msg)
 
 int Sumnum(int m, int n)
 {
-    if(n<=m) return m;
-    else return n + (Sumnum(m, n-1));
+    if (n <= m) return m;
+    else return n + (Sumnum(m, n - 1));
 
-} 
+}
 
 int m = Prompt("Enter m ");
 int n = Prompt("Entar n ");
